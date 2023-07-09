@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import { Card, Typography, Space, Rate } from 'antd';
 
 const BookByID = () => {
-  const [book, setBook] = useState(JSON.parse(localStorage.getItem("book")));
+  const storage = JSON.parse(localStorage.getItem("book"))
+  const [book, setBook] = useState(storage);
   const router = useRouter();
 
   if (router.isFallback) {
